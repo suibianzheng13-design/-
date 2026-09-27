@@ -1,0 +1,85 @@
+{
+  id: 'com.smile.gifmaker',
+  name: '快手',
+  groups: [
+    {
+      key: 0,
+      name: '快手任务广告完成后自动继续',
+      rules: [
+        {
+          key: 0,
+          name: '领取成功返回',
+          action: 'back',
+          matches: [
+            '[text*="已成功领取奖励"]',
+          ],
+          activityIds: [
+            'com.yxcorp.gifshow.ad.neo.video.award.AwardVideoPlayActivity',
+          ],
+        },
+        {
+          key: 1,
+          name: '返回后点击去看广告',
+          action: 'click to 去看广告',
+          matches: [
+            '[text*="去看广告"]',
+          ],
+          actionCd: 600000,
+          activityIds: [
+            'com.yxcorp.gifshow.webview.KwaiYodaWebViewActivity',
+          ],
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '快手-自动上滑跳过',
+      fastQuery: true,
+      activityIds: [
+        'com.yxcorp.gifshow.HomeActivity',
+        'com.yxcorp.gifshow.detail.PhotoDetailActivity',
+      ],
+      rules: [
+        {
+          key: 3,
+          name: '免费看自动跳过',
+          action: 'swipe',
+          swipeArg: {
+            start: {
+              x: '540',
+              y: '1700',
+            },
+            end: {
+              x: '540',
+              y: '500',
+            },
+            duration: 300,
+          },
+          matches: [
+            '[text*="免费看"][visibleToUser=true]',
+          ],
+          actionCd: 600000,
+        },
+        {
+          key: 4,
+          name: '上滑继续观看',
+          action: 'swipe',
+          swipeArg: {
+            start: {
+              x: '540',
+              y: '1700',
+            },
+            end: {
+              x: '540',
+              y: '500',
+            },
+            duration: 300,
+          },
+          matches: [
+            '[text*="上滑继续观看"][visibleToUser=true]',
+          ],
+        },
+      ],
+    },
+  ],
+}
