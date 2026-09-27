@@ -11,7 +11,7 @@
 
   categories: [
     {
-      key: 'kuaishou',
+      key: '1',
       name: '快手'
     }
   ],
