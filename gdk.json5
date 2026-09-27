@@ -7,7 +7,7 @@
   updateUrl: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/main/gdk.json5',
   checkUpdateUrl: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/main/gdk.version.json5',
 
-  supportUri: 'https://gkd.li/',
+  supportUri: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/refs/heads/main/gdk.json5',
 
   categories: [],
 
