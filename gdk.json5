@@ -1,8 +1,8 @@
 {
-  id: 233,
-  name: 'ZD自动化规则',
+  id: 426546,
+  name: '墨白',
   version: 1,
-  author: 'suibianzheng13-design',
+  author: '墨白',
 
   updateUrl: 'https://github.com/suibianzheng13-design/-/blob/fd276690658c2905cf55e3b1c4d825d9e6d23496/ZD.json5',
   checkUpdateUrl: 'https://github.com/suibianzheng13-design/-/blob/fd276690658c2905cf55e3b1c4d825d9e6d23496/ZD.json5',
