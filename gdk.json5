@@ -18,107 +18,134 @@
       id: 'com.smile.gifmaker',
       name: '快手',
 
-      rules: [
+      groups: [
         {
           key: 0,
-          name: '领取成功返回',
+          name: '快手任务广告完成后自动继续',
 
-          action: 'back',
+          rules: [
+            {
+              key: 0,
+              name: '领取成功返回',
 
-          matches: [
-            '[text*="已成功领取奖励"]',
-          ],
+              action: 'back',
 
-          activityIds: [
-            'com.yxcorp.gifshow.ad.neo.video.award.AwardVideoPlayActivity',
+              matches: [
+                '[text*="已成功领取奖励"]',
+              ],
+
+              activityIds: [
+                'com.yxcorp.gifshow.ad.neo.video.award.AwardVideoPlayActivity',
+              ],
+            },
+
+            {
+              key: 1,
+              name: '返回后点击去看广告',
+
+              action: 'click',
+
+              matches: [
+                '[text*="去看广告"]',
+              ],
+
+              actionCd: 600000,
+
+              activityIds: [
+                'com.yxcorp.gifshow.webview.KwaiYodaWebViewActivity',
+              ],
+            },
           ],
         },
 
         {
           key: 1,
-          name: '返回后点击去看广告',
+          name: '快手-自动上滑跳过',
 
-          action: 'click',
-
-          matches: [
-            '[text*="去看广告"]',
-          ],
-
-          actionCd: 600000,
+          fastQuery: true,
 
           activityIds: [
-            'com.yxcorp.gifshow.webview.KwaiYodaWebViewActivity',
-          ],
-        },
-
-        {
-          key: 2,
-          name: '免费看自动跳过',
-
-          action: 'swipe',
-
-          swipeArg: {
-            start: {
-              x: '540',
-              y: '1700',
-            },
-            end: {
-              x: '540',
-              y: '500',
-            },
-            duration: 300,
-          },
-
-          matches: [
-            '[text*="免费看"][visibleToUser=true]',
+            'com.yxcorp.gifshow.HomeActivity',
+            'com.yxcorp.gifshow.detail.PhotoDetailActivity',
           ],
 
-          actionCd: 600000,
-        },
+          rules: [
+            {
+              key: 0,
+              name: '免费看自动跳过',
 
-        {
-          key: 3,
-          name: '上滑继续观看',
+              action: 'swipe',
 
-          action: 'swipe',
+              swipeArg: {
+                start: {
+                  x: '540',
+                  y: '1700',
+                },
 
-          swipeArg: {
-            start: {
-              x: '540',
-              y: '1700',
+                end: {
+                  x: '540',
+                  y: '500',
+                },
+
+                duration: 300,
+              },
+
+              matches: [
+                '[text*="免费看"][visibleToUser=true]',
+              ],
+
+              actionCd: 600000,
             },
-            end: {
-              x: '540',
-              y: '500',
+
+            {
+              key: 1,
+              name: '上滑继续观看',
+
+              action: 'swipe',
+
+              swipeArg: {
+                start: {
+                  x: '540',
+                  y: '1700',
+                },
+
+                end: {
+                  x: '540',
+                  y: '500',
+                },
+
+                duration: 300,
+              },
+
+              matches: [
+                '[text*="上滑继续观看"][visibleToUser=true]',
+              ],
             },
-            duration: 300,
-          },
 
-          matches: [
-            '[text*="上滑继续观看"][visibleToUser=true]',
-          ],
-        },
+            {
+              key: 2,
+              name: '立即跳转',
 
-        {
-          key: 4,
-          name: '立即跳转',
+              action: 'swipe',
 
-          action: 'swipe',
+              swipeArg: {
+                start: {
+                  x: '540',
+                  y: '1700',
+                },
 
-          swipeArg: {
-            start: {
-              x: '540',
-              y: '1700',
+                end: {
+                  x: '540',
+                  y: '500',
+                },
+
+                duration: 300,
+              },
+
+              matches: [
+                '[text*="立即跳转"][visibleToUser=true]',
+              ],
             },
-            end: {
-              x: '540',
-              y: '500',
-            },
-            duration: 300,
-          },
-
-          matches: [
-            '[text*="立即跳转"][visibleToUser=true]',
           ],
         },
       ],
