@@ -1,7 +1,7 @@
 {
   id: 426,
   name: '墨白',
-  version: 1,
+  version: 2,
   author: '墨白',
 
   updateUrl: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/main/gdk.json5',
