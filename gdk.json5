@@ -9,12 +9,7 @@
 
   supportUri: 'https://github.com/suibianzheng13-design',
 
-  categories: [
-    {
-      key: '1',
-      name: '快手'
-    }
-  ],
+  categories: [],
 
   globalGroups: [],
 
