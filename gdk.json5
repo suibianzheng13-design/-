@@ -17,8 +17,6 @@
     {
       id: 'com.smile.gifmaker',
       name: '快手',
-
-      groups: [
         {
           key: 0,
           name: '快手任务广告完成后自动继续',
