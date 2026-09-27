@@ -1,13 +1,13 @@
 {
-  id: 42654,
+  id: 426,
   name: '墨白',
   version: 1,
   author: '墨白',
 
-  updateUrl: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/refs/heads/main/gdk.json5',
-  checkUpdateUrl: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/refs/heads/main/gdk.json5',
+  updateUrl: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/main/gdk.json5',
+  checkUpdateUrl: 'https://raw.githubusercontent.com/suibianzheng13-design/Mo/main/gdk.version.json5',
 
-  supportUri: 'https://github.com/suibianzheng13-design',
+  supportUri: 'https://gkd.li/',
 
   categories: [],
 
@@ -17,114 +17,111 @@
     {
       id: 'com.smile.gifmaker',
       name: '快手',
+
+      rules: [
         {
           key: 0,
-          name: '快手任务广告完成后自动继续',
+          name: '领取成功返回',
 
-          rules: [
-            {
-              key: 0,
-              name: '领取成功返回',
+          action: 'back',
 
-              action: 'back',
+          matches: [
+            '[text*="已成功领取奖励"]',
+          ],
 
-              matches: [
-                '[text*="已成功领取奖励"]',
-              ],
-
-              activityIds: [
-                'com.yxcorp.gifshow.ad.neo.video.award.AwardVideoPlayActivity',
-              ],
-            },
-
-            {
-              key: 1,
-              name: '返回后点击去看广告',
-
-              action: 'click',
-
-              matches: [
-                '[text*="去看广告"]',
-              ],
-
-              actionCd: 600000,
-
-              activityIds: [
-                'com.yxcorp.gifshow.webview.KwaiYodaWebViewActivity',
-              ],
-            },
+          activityIds: [
+            'com.yxcorp.gifshow.ad.neo.video.award.AwardVideoPlayActivity',
           ],
         },
 
+        {
+          key: 1,
+          name: '返回后点击去看广告',
+
+          action: 'click',
+
+          matches: [
+            '[text*="去看广告"]',
+          ],
+
+          actionCd: 600000,
+
+          activityIds: [
+            'com.yxcorp.gifshow.webview.KwaiYodaWebViewActivity',
+          ],
+        },
 
         {
           key: 2,
-          name: '快手-自动上滑跳过',
+          name: '免费看自动跳过',
 
-          fastQuery: true,
+          action: 'swipe',
 
-          activityIds: [
-            'com.yxcorp.gifshow.HomeActivity',
-            'com.yxcorp.gifshow.detail.PhotoDetailActivity',
+          swipeArg: {
+            start: {
+              x: '540',
+              y: '1700',
+            },
+            end: {
+              x: '540',
+              y: '500',
+            },
+            duration: 300,
+          },
+
+          matches: [
+            '[text*="免费看"][visibleToUser=true]',
           ],
 
-          rules: [
-            {
-              key: 3,
+          actionCd: 600000,
+        },
 
-              name: '免费看自动跳过',
+        {
+          key: 3,
+          name: '上滑继续观看',
 
-              action: 'swipe',
+          action: 'swipe',
 
-              swipeArg: {
-                start: {
-                  x: '540',
-                  y: '1700',
-                },
-
-                end: {
-                  x: '540',
-                  y: '500',
-                },
-
-                duration: 300,
-              },
-
-              matches: [
-                '[text*="免费看"][visibleToUser=true]',
-              ],
-
-              actionCd: 600000,
+          swipeArg: {
+            start: {
+              x: '540',
+              y: '1700',
             },
-
-
-            {
-              key: 4,
-
-              name: '上滑继续观看',
-
-              action: 'swipe',
-
-              swipeArg: {
-                start: {
-                  x: '540',
-                  y: '1700',
-                },
-
-                end: {
-                  x: '540',
-                  y: '500',
-                },
-
-                duration: 300,
-              },
-
-              matches: [
-                '[text*="上滑继续观看"][visibleToUser=true]',
-              ],
+            end: {
+              x: '540',
+              y: '500',
             },
+            duration: 300,
+          },
+
+          matches: [
+            '[text*="上滑继续观看"][visibleToUser=true]',
           ],
         },
+
+        {
+          key: 4,
+          name: '立即跳转',
+
+          action: 'swipe',
+
+          swipeArg: {
+            start: {
+              x: '540',
+              y: '1700',
+            },
+            end: {
+              x: '540',
+              y: '500',
+            },
+            duration: 300,
+          },
+
+          matches: [
+            '[text*="立即跳转"][visibleToUser=true]',
+          ],
+        },
+      ],
     },
   ],
 }
